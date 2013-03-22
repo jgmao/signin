@@ -2,13 +2,15 @@
 <html>
 <head>
   <title>Mysignin</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <%= csrf_meta_tag %> <!-- at end of header in rails 3.2. -->
+    <%= render 'layouts/stylesheets' %>
+	<%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
 </head>
 
 <body>
 <div class="container">
+	 
       <!--%= render 'layouts/header' %-->
       <% flash.each do |key, value| %>
       <!-- <div class="flash <%= key %>"><%= value %></div>

@@ -4,7 +4,10 @@ Mysignin::Application.routes.draw do
 
   match '/signin', :to => 'sessions#new' #direct /sigin to /sessions.new action
   match '/signout', :to => 'sessions#destroy' #direct /signout to /sessions.destroy action
+  match '/hide', :to => 'users#new'
+  #match '/del', :to => 'users#destroy'
   root :to => 'sessions#new'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
