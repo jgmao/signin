@@ -1,0 +1,35 @@
+<h1>Listing reactions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Reactiontransform</th>
+    <th>Products</th>
+    <th>Conditions</th>
+    <th>Syncount</th>
+    <th>Doi</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reactions.each do |reaction| %>
+  <tr>
+    <td><%= reaction.name %></td>
+    <td><%= reaction.reactionTransform %></td>
+    <td><%= reaction.products %></td>
+    <td><%= reaction.conditions %></td>
+    <td><%= reaction.synCount %></td>
+    <td><%= reaction.doi %></td>
+    <td><%= reaction.user %></td>
+    <td><%= link_to 'Show', reaction %></td>
+    <td><%= link_to 'Edit', edit_reaction_path(reaction) %></td>
+    <td><%= link_to 'Destroy', reaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reaction', new_reaction_path %>

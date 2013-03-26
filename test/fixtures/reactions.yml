@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  reactionTransform: MyString
+  products: MyString
+  conditions: MyString
+  synCount: 1
+  doi: MyString
+  user: MyString
+
+two:
+  name: MyString
+  reactionTransform: MyString
+  products: MyString
+  conditions: MyString
+  synCount: 1
+  doi: MyString
+  user: MyString

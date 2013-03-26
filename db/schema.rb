@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321041954) do
+ActiveRecord::Schema.define(:version => 20130326023845) do
+
+  create_table "reactions", :force => true do |t|
+    t.string   "name"
+    t.string   "reactionTransform"
+    t.string   "products"
+    t.string   "conditions"
+    t.integer  "synCount"
+    t.string   "doi"
+    t.string   "user"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

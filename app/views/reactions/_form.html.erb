@@ -1,0 +1,45 @@
+<%= form_for(@reaction) do |f| %>
+  <% if @reaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reaction.errors.count, "error") %> prohibited this reaction from being saved:</h2>
+
+      <ul>
+      <% @reaction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :reactionTransform %><br />
+    <%= f.text_field :reactionTransform %>
+  </div>
+  <div class="field">
+    <%= f.label :products %><br />
+    <%= f.text_field :products %>
+  </div>
+  <div class="field">
+    <%= f.label :conditions %><br />
+    <%= f.text_field :conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :synCount %><br />
+    <%= f.number_field :synCount %>
+  </div>
+  <div class="field">
+    <%= f.label :doi %><br />
+    <%= f.text_field :doi %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

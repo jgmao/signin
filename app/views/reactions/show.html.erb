@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @reaction.name %>
+</p>
+
+<p>
+  <b>Reactiontransform:</b>
+  <%= @reaction.reactionTransform %>
+</p>
+
+<p>
+  <b>Products:</b>
+  <%= @reaction.products %>
+</p>
+
+<p>
+  <b>Conditions:</b>
+  <%= @reaction.conditions %>
+</p>
+
+<p>
+  <b>Syncount:</b>
+  <%= @reaction.synCount %>
+</p>
+
+<p>
+  <b>Doi:</b>
+  <%= @reaction.doi %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @reaction.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_reaction_path(@reaction) %> |
+<%= link_to 'Back', reactions_path %>

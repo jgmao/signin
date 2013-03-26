@@ -1,4 +1,7 @@
 Mysignin::Application.routes.draw do
+  resources :reactions
+
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy] #means it has to response to the actions
 
