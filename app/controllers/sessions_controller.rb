@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     else
       # Sign the user in and redirect to the user's show page.
       sign_in user 
-      redirect_to user#to other things later
+      redirect_to newreaction_path#user#to other things later
     end
   end
   def destroy
