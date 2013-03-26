@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  
+  #before_filter :authenticate, :only => [:edit , :update] #only allow authenticated user to edit and update 
+  #before_filter :correct_user, :only => [:edit , :update] #only correct user can edit and update
+  before_filter :admin_user, :only => [:create, :destroy]
   def index
     @title = "All users"
     # @users = User.all
@@ -34,4 +36,16 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   
+  private
+  def authenticate
+    deny_access unless signed_in?
+  end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
+  end
+  
+  def admin_user
+    redirect_to(root_path) unless current_user.admin
+  end
 end
