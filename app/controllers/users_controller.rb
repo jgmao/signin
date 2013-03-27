@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   #before_filter :correct_user, :only => [:edit , :update] #only correct user can edit and update
   before_filter :admin_user, :only => [:create,:new, :destroy, :index]
   #use for test git
+  #use for test git
   def index
     @title = "All users"
     # @users = User.all
