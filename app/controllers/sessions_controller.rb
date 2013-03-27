@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   def new
-    @title ="Sign in"
+      @title ="Sign in"
+    if signed_in?
+      redirect_to newreaction_path #redirect
+    end
   end
   def create#this is what happen when click submit
     user = User.authenticate(params[:session][:name],params[:session][:password])
