@@ -24,8 +24,10 @@ class ReactionsController < ApplicationController
   # GET /reactions/new
   # GET /reactions/new.json
   def new
+    if current_user==nil
+      redirect_to signin_path and return
+    end
     @reaction = Reaction.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @reaction }
